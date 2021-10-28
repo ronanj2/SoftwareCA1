@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Arrays;
 
+/**
+ * A {@link Rectangle} inherits from {@link Shape} and implements {@link Moveable}.
+ */
 public class Rectangle extends Shape implements Moveable {
     protected int width;
     protected int height;

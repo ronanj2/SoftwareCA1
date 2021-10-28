@@ -1,5 +1,9 @@
 package com.student.L00170333.CA1.Shapes;
 
+/**
+ * This Pair record was created for tracking X and Y points.
+ * It is constructed using generics to allow for all kinds of future reuse.
+ */
 public record Pair<U, V>(U first, V second) {
     /**
      * Constructs a new <code>Pair</code> with the given values.

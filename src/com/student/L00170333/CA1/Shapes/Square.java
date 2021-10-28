@@ -2,6 +2,10 @@ package com.student.L00170333.CA1.Shapes;
 
 import java.awt.Color;
 
+/**
+ * A {@link Square} inherits from {@link Rectangle} and provides very little extra functionality not already
+ * offered by {@link Rectangle}.
+ */
 public class Square extends Rectangle {
     public Square(int width) {
         this(0, 0, width);

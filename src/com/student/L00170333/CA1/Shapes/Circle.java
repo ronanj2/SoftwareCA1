@@ -3,6 +3,9 @@ package com.student.L00170333.CA1.Shapes;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * A {@link Circle} inherits from {@link Shape}.
+ */
 public class Circle extends Shape {
     private final int radius;
 

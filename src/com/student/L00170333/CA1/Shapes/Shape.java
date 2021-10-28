@@ -3,6 +3,9 @@ package com.student.L00170333.CA1.Shapes;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * This abstract superclass is extended by the various shape classes.
+ */
 public abstract class Shape {
     protected Color color;
     protected Boolean isFilled;

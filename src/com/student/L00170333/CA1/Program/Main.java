@@ -37,7 +37,9 @@ public class Main {
         // Our Quadrilateral has been coded to support any number of points/sides. So, we could in theory
         // rename it to Polygon and then have a Quadrilateral class inheriting from Polygon, similar to the structure
         // and relationship we have between Square and Rectangle.
-        // As an example, the following commented code has 7 sides, and will rotate just fine.
+        // As an example, the following commented code has 7 sides, and it would rotate just fine. If we want to
+        // run the program with this example, then we must comment out the check in the Quadrilateral constructor that
+        // checks for exactly 4 points during instantiation.
         /*
         Point[] pointsArray = {
                 new Point(380, 72),

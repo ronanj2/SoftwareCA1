@@ -4,19 +4,29 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Arrays;
 
+/**
+ * A {@link Quadrilateral} is a Polygon that inherits from {@link Shape} and has exactly 4 sides/vertices.
+ */
 public class Quadrilateral extends Shape implements Rotatable {
     private final Point[] points;
 
     public Quadrilateral(Point centerPoint, Point[] points, Color color, Boolean isFilled) {
         super(centerPoint.x, centerPoint.y, color, isFilled);
+
+        // While this class has been coded to support any number of sides (we have not hard coded 4 anywhere!),
+        // we must still check that the points array has not tried to instantiate this object with less than or more
+        // than 4 points. If we allowed that, then this wouldn't be a quadrilateral now would it.
+        if (points.length != 4) {
+            // Thrown to indicate that the ctor has been passed an illegal or inappropriate argument.
+            throw new IllegalArgumentException("A Quadrilateral must have exactly 4 sides");
+        }
+
         this.points = points;
         setupBoundingBox();
     }
 
     public Quadrilateral(Point centerPoint, Point[] points) {
-        super(centerPoint.x, centerPoint.y, Color.yellow, true);
-        this.points = points;
-        setupBoundingBox();
+        this(centerPoint, points, Color.yellow, true);
     }
 
     public Quadrilateral(Point centerPoint, Point p1, Point p2, Point p3, Point p4) {
