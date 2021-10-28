@@ -119,7 +119,7 @@ public class Quadrilateral extends Shape implements Rotatable {
         double sin = Math.sin(angle);
         for(int n=0; n<xPoints.length; n++){
             double temp = ((xPoints[n] - xCenter) * cos - (yPoints[n] - yCenter) * sin) + xCenter;
-            yPoints[n] = (int)Math.round((xPoints[n]-xCenter)*sin + (yPoints[n]-yCenter)*cos) + yCenter;
+            yPoints[n] = (int)Math.round((xPoints[n]-xCenter) * sin + (yPoints[n]-yCenter) * cos) + yCenter;
             xPoints[n] = (int)Math.round(temp);
         }
 
@@ -129,12 +129,13 @@ public class Quadrilateral extends Shape implements Rotatable {
             points[i].y = yPoints[i];
         }
 
+        // after rotating the shape, we must recreate the bounding box to encapsulate the new shapes position
         setupBoundingBox();
     }
 
     @Override
     public String toString() {
-        return String.format("Quadrilateral with points=%s which is a subclass of %s",
-                Arrays.toString(this.points), super.toString());
+        return String.format("%s with points=%s which is a subclass of %s",
+                this.getShapeName(), Arrays.toString(this.points), super.toString());
     }
 }
